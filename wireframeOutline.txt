@@ -1,0 +1,42 @@
+[REQUIRED] Name: Harpreet Janjua
+[REQUIRED] Project Title: Get This Not That 
+[REQUIRED] Project Stack: MERN
+[REQUIRED] GitHub Repo Link: https://github.com/hjanjua90/Projects-Algos
+
+[REQUIRED] Project Description: Grocery List app that displays items user needs to buy along with the items photos. 
+
+[REQUIRED] New Programming Concept(s) I'm Planning to Learn: I'm planning on learning to implement how user can use geo location to locate a nearby grocery store.
+
+[REQUIRED] Week 1 Features (to show at Review during Week 2)
+-  Have a simple project with all the crud operations made.
+
+[REQUIRED] Week 2 Features (to show at first office hour/lecture of Week 3)
+- ***Finish CSS work (could be Bootstrap or another framework too instead of CSS)***
+- Try to implement bootstrap or tailwind
+
+[REQUIRED] Product Backlog (If I have more time after completing my MVP, I'll start to work on...)
+- Either adding more features to my app or building a medical appointment app.
+
+
+
+
+
+
+Other Week 1 Tasks
+- Sign up for a group (https://docs.google.com/spreadsheets/d/17amQ1VW4wAWI9tz-9qVTq9pf1HCAnQkki_3W8tLbOLY/edit#gid=0)
+- Schedule a Review during Week 2 (https://calendly.com/d/cnc-5t7-4yv/solo-project-sprint-w1-review)
+- Create GitHub repo for project
+- Create a .gitignore file for my project for my GitHub repo (enter in React, Python, or Java at https://www.toptal.com/developers/gitignore)
+- Finish this completed txt file and create project wireframe using Balsamiq (https://balsamiq.com/wireframes/) [Drawings and other wireframe programs also accepted!]
+- Email Zack this completed txt file, and project wireframe for approval
+- Submit completed wireframe on platform (https://login.codingdojo.com/m/97/6237/44911)
+- Complete Arrays To Do 1 & Arrays To Do 2 assignments
+
+
+Other Week 2 Tasks
+- Schedule my time for my presentation (https://docs.google.com/spreadsheets/d/17amQ1VW4wAWI9tz-9qVTq9pf1HCAnQkki_3W8tLbOLY/edit#gid=414986054)
+- Begin to talk with group about project ideas and what skills I bring to the table
+- Complete Singly Linked Lists Fronts & Display assignments
+
+
+
