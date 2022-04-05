@@ -49,7 +49,8 @@ const GrocerySchema = new mongoose.Schema({
 
 
     quantity:{
-        type: Number
+        type: Number,
+        required:[true, "Quantity input is required"]
     },
     //timestamps automatically create "createdAt" and"updatedAt" date and time info for each document
 //everytime a doc is updated, it will change the "updatedAt"

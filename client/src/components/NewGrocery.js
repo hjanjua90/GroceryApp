@@ -8,7 +8,7 @@ import Form from "./Form";
 
 
 
-const New = (props) => {
+const NewGrocery = (props) => {
     // This code here is prior to refractoring
     // const [name, setName] = useState("");
     // const [type, setType] = useState("");
@@ -83,4 +83,4 @@ const New = (props) => {
 
 
 
-export default New;
+export default NewGrocery;
