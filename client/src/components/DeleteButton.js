@@ -1,5 +1,6 @@
 import React from "react";
-
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
@@ -8,7 +9,7 @@ const DeleteButton = (props)=>{
     const {deleteHandler} = props;
 
     return(
-        <button onClick={deleteHandler}>Delete</button>
+        <Button onClick={deleteHandler}>Delete</Button>
     )
 }
 

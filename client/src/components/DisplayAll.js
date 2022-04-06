@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 import DeleteButton from "./DeleteButton";
 import { Table } from "react-bootstrap"; 
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
@@ -38,11 +39,15 @@ const DisplayAll = (props) => {
 
     return (
         <div>
-            <Header
-            titleText= {"Get this Not that"}
-            link={"/new"}
-            linkText={"Add new item"}
-            />
+            <header>
+                <h1 style={{
+                    fontSize: "50px", borderBottom: "5px double lightgray",
+                    marginLeft: "450px", marginRight: "450px"
+                }}>Get This NOT That
+                </h1>
+                {/* path to our NewMovie component as set in the Router in app.js */}
+                <Link to={"/new"}>Add New Grocery Item</Link>
+            </header>
             <Table style={{margin:"auto", border:"1px solid black"}}>
                 <thead style={{backgroundColor:"lightgray", color:"white"}}>
                 <tr>
@@ -66,7 +71,7 @@ const DisplayAll = (props) => {
                                         {grocery.quantity}
                                     </td>
                                     <td>
-                                    <Link to={`/grocery/edit/${grocery._id}`}><button >Edit </button></Link>
+                                    <Link to={`/grocery/edit/${grocery._id}`}><Button >Edit </Button></Link>
                                     <DeleteButton deleteHandler={()=>deleteGrocery(grocery._id)} />
                                     </td>
                                 </tr>

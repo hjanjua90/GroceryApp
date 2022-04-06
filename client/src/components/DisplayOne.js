@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-import Header from "./Header";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import DeleteButton from "./DeleteButton";
 
 const DisplayOne = (props) =>{
@@ -37,11 +36,13 @@ const DisplayOne = (props) =>{
 
     return (
         <div>
-            <Header
-                titleText={grocery.name}
-                link={"/"}
-                linkText={"Return Home"}
-            />
+            <header>
+                <h1 style={{
+                    fontSize: "50px", borderBottom: "5px double lightgray",
+                    marginLeft: "450px", marginRight: "450px"
+                }}>{grocery.name}</h1>
+                <Link to={"/"}>Return to Dashboard</Link>
+            </header>
             <p>{grocery.type}</p>
             <p>{grocery.quantity}</p>
             <img src={grocery.boxArt} style={{ width: "50px", height: "50px" }}/>

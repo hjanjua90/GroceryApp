@@ -78,7 +78,7 @@ const Grocery = require("../models/grocery.model");
 
         updateGrocery: (req, res)=>{
             //This Mongoose query requires both a parameter AND body from the request!
-            Movie.findOneAndUpdate({_id: req.params.id},
+            Grocery.findOneAndUpdate({_id: req.params.id},
                 req.body,
                 //These options return a new doc and allow schema valids to run on PUT req
                 {new: true, runValidators: true}
