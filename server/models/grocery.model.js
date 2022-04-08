@@ -40,18 +40,27 @@ const GrocerySchema = new mongoose.Schema({
     },
 
 
-    boxArt: { //url of image from internet
-        type: String,
-        //The messages from validators will be accessible after we set our
-    //res.status(400).json(err) in our controller
-        required: [true, "He/She won't know unless there is a picture"]
-    },
+    // boxArt: { //url of image from internet
+    //     type: String,
+    //     //The messages from validators will be accessible after we set our
+    // //res.status(400).json(err) in our controller
+    //     required: [true, "He/She won't know unless there is a picture"]
+    // },
 
 
     quantity:{
         type: Number,
         required:[true, "Quantity input is required"]
     },
+    // inCart:{
+    //     type: Boolean,
+    //     // required:[true, "Need to know if item is in cart!!!"]
+    // },
+
+    createdBy:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }
     //timestamps automatically create "createdAt" and"updatedAt" date and time info for each document
 //everytime a doc is updated, it will change the "updatedAt"
 

@@ -7,6 +7,7 @@ const EditGrocery = (props)=>{
     const [type, setType] = useState("");
     const [boxArt, setBoxArt] = useState("");
     const [quantity, setQuantity] = useState("");
+    const [inCart, setInCart] = useState(false);
 
     const { id } = useParams();
 
@@ -21,6 +22,7 @@ const EditGrocery = (props)=>{
             setType(res.data.type);
             setBoxArt(res.data.boxArt);
             setQuantity(res.data.quantity);
+            setInCart(res.data.InCart);
         })
         .catch((err)=>console.log(err))
     },[id])
@@ -33,6 +35,7 @@ const EditGrocery = (props)=>{
                 type, //the getter MUST MATCH the field name in schema to write it this way
                 boxArt,
                 quantity,
+                inCart,
             })
             .then((res) => {
                 console.log(res);
@@ -107,6 +110,10 @@ const EditGrocery = (props)=>{
                             <span>{errors.quantity.message}</span>
                             : null
                     }     */}
+                </div>
+                <div>
+                    <label>In Cart</label>
+                    <input checked={inCart} onChange={(e) => setInCart(e.target.checked)} type="checkbox" />
                 </div>
                 <button>Update Item</button>
         </form>

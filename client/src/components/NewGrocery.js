@@ -16,6 +16,7 @@ const NewGrocery = (props) => {
     const [type, setType] = useState("");
     const [boxArt, setBoxArt] = useState("");
     const [quantity, setQuantity] = useState("");
+    const [inCart, setInCart] = useState(false);
 
 
     const [errors, setErrors] = useState({});
@@ -34,6 +35,7 @@ const NewGrocery = (props) => {
             type, //the getter MUST MATCH the field name in schema to write it this way
             boxArt,
             quantity,
+            inCart,
         })
             .then((res)=>{
                 console.log(res);
@@ -119,6 +121,16 @@ const NewGrocery = (props) => {
                             : null
                     }    
                 </div>
+                {/* <div>
+                    <label>In Cart</label>
+                    <input checked={inCart} onChange={(e) => setInCart(e.target.checked)} type="checkbox" />
+                    <br />
+                    {
+                        errors.inCart ?
+                            <span>{errors.inCart.message}</span>
+                            : null
+                    }
+                </div> */}
                 <Button>Add Item</Button>
         </Form>
     </div>

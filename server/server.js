@@ -1,6 +1,8 @@
 //This order is necessary! Don't move things around.
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const app = express();
 
 
@@ -19,14 +21,19 @@ app.use(cors({
     origin: "http://localhost:3000"
 }))
 
+app.use(cookieParser())
 
 require("./config/mongoose.config")
 
 require("./routes/grocery.routes")(app)
-// Longhand:
-// const movieRoutes = require("./routes/movie.routes");
-// movieRoutes(app);
+
+// log/reg routes
+
+require("./routes/user.routes")(app)
 
 
-//After connecting to our port (8000), this console.log lets us know we're connected to our server.
-app.listen(8000, ()=>console.log("You are connected to port 8000"))
+
+
+
+//After connecting to our port (8000), this console.log lets us know we're connected to our server. Using variable in .ENV file to connect to port 8000. 
+app.listen(process.env.MY_PORT, () => console.log(`You are connected to port ${process.env.MY_PORT}`))

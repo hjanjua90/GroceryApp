@@ -1,4 +1,5 @@
 const Grocery = require("../models/grocery.model");
+const jwt = require("jsonwebtoken")
 
 
 
@@ -13,6 +14,7 @@ const Grocery = require("../models/grocery.model");
 
         findAllGroceries:(req, res)=>{
             Grocery.find()
+                .populate("createdBy", "username email")
                 .then((allGroceries)=>{
                     console.log(allGroceries);
                     res.json(allGroceries)
@@ -25,7 +27,16 @@ const Grocery = require("../models/grocery.model");
         },
 
         createNewGrocery: (req, res)=>{
-            Grocery.create(req.body)
+            const newGroceryObject = new Grocery(req.body);
+
+            const decodedJWT = jwt.decode(req.cookies.usertoken,{
+                complete:true
+            })
+
+            newGroceryObject.createdBy = decodedJWT.payload.id;
+            
+            newGroceryObject.save()
+            
                 .then((newGrocery)=>{
                     console.log(newGrocery);
                     res.json(newGrocery);
@@ -38,13 +49,11 @@ const Grocery = require("../models/grocery.model");
                 //A 400 status means our client is talking 
                     //to our server just fine, but the client isn't sending good info.
 
-                //This is how we will eventually display 
-                    //our validations from the server in react!
 
                 //A 404 status error means the client's 
                     //request isn't to the right place or your server is not set up properly
 
-                //On the flip-side, a status of 200 means we are looking good!
+                // a status of 200 means we are looking good!
                     res.status(400).json(err)
                 })
         },
