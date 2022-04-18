@@ -35,19 +35,22 @@ const DisplayOne = (props) =>{
     }
 
     return (
-        <div>
-            <header>
-                <h1 style={{
-                    fontSize: "50px", borderBottom: "5px double lightgray",
-                    marginLeft: "450px", marginRight: "450px"
-                }}>{grocery.name}</h1>
-                <Link to={"/"}>Return to Dashboard</Link>
-            </header>
-            <p>{grocery.type}</p>
+        <div className="card">
+            <div class="card-header">
+            <Link to={"/home"}>Home</Link>
+            </div>
+            <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">{grocery.name}</h5>
+            <p class="card-text">{grocery.type}</p>
             <p>{grocery.quantity}</p>
-            <img src={grocery.boxArt} style={{ width: "50px", height: "50px" }}/>
+            <img src={grocery.boxArt} style={{ width: "150px", height: "200px" }}/>
+            <br />
             <DeleteButton deleteHandler={deleteOneGrocery}/>
+            </div>
+            </div>
         </div>
+
     )
 }
 

@@ -5,7 +5,7 @@ module.exports = {
 
 
     authenticate(req, res, next){
-        jwt.verify(req.cookies.usertoken,
+        jwt.verify(req.cookies.userToken,
             process.env.JWT_SECRET,
             (err, payload)=>{
                 if(err){

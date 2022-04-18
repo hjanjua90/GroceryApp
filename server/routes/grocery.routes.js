@@ -14,6 +14,7 @@ module.exports= (app)=> {
 //Make sure calls with params go after the previous calls!    
     app.get("/api/groceries/:id", GroceryController.findOneGrocery);
 
+    app.get("/api/groceriesbyuser/:username", authenticate, GroceryController.findAllGroceriesByUser);
 //The parameter id, as defined in the controller MUST MATCH
 //what we defined it as in the controller!
     app.delete("/api/groceries/:id", GroceryController.deleteOneGrocery);

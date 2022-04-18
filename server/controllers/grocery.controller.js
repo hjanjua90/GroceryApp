@@ -1,12 +1,8 @@
 const Grocery = require("../models/grocery.model");
-const jwt = require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
+const User = require("../models/user.model");
 
 
-
-//We are exporting an object of key value pairs.
-    //The Key being how we're referring to our calls
-// And the Call itself (arrow func), being the value!
-    //We can easily access these in the movie.routes.js
 
 
     module.exports = {
@@ -28,13 +24,14 @@ const jwt = require("jsonwebtoken")
 
         createNewGrocery: (req, res)=>{
             const newGroceryObject = new Grocery(req.body);
+            console.log(req.body)
 
-            const decodedJWT = jwt.decode(req.cookies.usertoken,{
+            const decodedJWT = jwt.decode(req.cookies.userToken,{
                 complete:true
             })
 
             newGroceryObject.createdBy = decodedJWT.payload.id;
-            
+
             newGroceryObject.save()
             
                 .then((newGrocery)=>{
@@ -100,7 +97,44 @@ const jwt = require("jsonwebtoken")
                     console.log("Something went wrong in updateGrocery");
                     res.status(400).json(err) //See above (explained in create)
                 })
+        },
+        findAllGroceriesByUser: (req, res)=>{
+
+            if(req.jwtpayload.username !== req.params.username){
+                console.log("not the user");
+
+                User.findOne({username: req.params.username})
+                    .then((userNotLoggedIn)=>{
+                        Grocery.find({createdBy: userNotLoggedIn._id})
+                            .populate("createdBy", "username")
+                            .then((allGroceriesFromUser)=>{
+                                console.log(allGroceriesFromUser);
+                                res.json(allGroceriesFromUser);
+                            })
+                    })
+                    .catch((err)=>{
+                        console.log(err);
+                        res.status(400).json(err);
+                    })
+            }
+
+            else{
+                console.log("current user")
+                console.log("req.jwtpayload.id:", req.jwtpayload.id);
+                Grocery.find({ createdBy: req.jwtpayload.id })
+                    .populate("createdBy", "username")
+                    .then((allGroceriesFromLoggedInUser) => {
+                        console.log(allGroceriesFromLoggedInUser);
+                        res.json(allGroceriesFromLoggedInUser);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                        res.status(400).json(err);
+                    })
+            }
+
         }
+
 
 
     }

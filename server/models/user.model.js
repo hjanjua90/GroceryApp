@@ -5,17 +5,17 @@ const bcrypt = require("bcrypt");
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: [true, "Username is required"]
+        required: [true, " is required"]
     },
 
     email: {
         type: String,
-        required: [true, "Email address is required"]
+        required: [true, " is required"]
     },
 
     password: {
         type: String,
-        required: [true, "Password is required"],
+        required: [true, " is required"],
         minLength: [8, "Passwords MUST be at least 8 characters"]
     }
 
@@ -30,7 +30,7 @@ const UserSchema = new mongoose.Schema({
 
     // mongoose middlewear is used to take data in and processes it gives it to a function &/ api.NEXT allows us to move from middlewear to middle wear
     // pre middlewear
-UserSchema.pre("validation", function(next){
+    UserSchema.pre("validation", function(next){
     if(this.password !== this.confirmPassword){
         this.invalidate("confirmPassword", "Password must match!")
         console.log("Password do not match")

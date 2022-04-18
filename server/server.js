@@ -18,7 +18,8 @@ app.use(express.urlencoded({extended:true}))
 //Taking it away will result in "cors errors" when attemptnig your axios calls!
 //This security feature is built into the browser. That's why we don't experience it in Postman.
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: "http://localhost:3000",
+    credentials: true
 }))
 
 app.use(cookieParser())
