@@ -36,6 +36,7 @@ const GrocerySchema = new mongoose.Schema({
             "Dairy",
             "Toiletries",
             "Pet Care",
+            "Other"
         ]
     },
 
