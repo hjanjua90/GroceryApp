@@ -93,6 +93,7 @@ const NewGrocery = (props) => {
                             <option value="Meat/Protein">Meat/Protein</option>
                             <option value="Toiletries">Toiletries</option>
                             <option value="Pet Care">Pet Care</option>
+                            <option value="Other">Other</option>
                         </select>
                         <br />
                         {
