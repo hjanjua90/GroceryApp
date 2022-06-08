@@ -36,13 +36,14 @@ const Login = (props) => {
     };
 
     return (
-        <div style={{display:"flex", fontFamily:"monospace", color:"royalblue"}}>
+        <div className="blurred-box-form mt-5 text-center m-5">
             <h1>Login</h1>
             <p className="error-text">{errorMessage ? errorMessage : ""}</p>
             <div className="form">
-            <form  className= "form-control" onSubmit={login}>
+            <form  className= "form-control blurred-box" onSubmit={login}>
                 <div>
                     <label className="form-label">Email</label>
+                    <br/>
                     <input
                         type="text"
                         name="email"
@@ -52,6 +53,7 @@ const Login = (props) => {
                 </div>
                 <div>
                     <label  className="form-label">Password</label>
+                    <br/>
                     <input
                         type="password"
                         name="password"
@@ -60,7 +62,7 @@ const Login = (props) => {
                     />
                 </div>
                 <div className="center">
-                    <Button variant="primary" size="sm" type="submit">Sign In</Button>
+                    <Button variant="primary" size="sm" type="submit" margin="50px">Sign In</Button>
                 </div>
             </form>
             </div>

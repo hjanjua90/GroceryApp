@@ -57,14 +57,15 @@ const Register = (props)=>{
 
 
     return (
-        <div style={{display:"flex", fontFamily:"monospace", color:"royalblue"}}>
+        <div className="blurred-box-form m-5 text-center">
             <h1>Register</h1>
             {confirmReg ? <h4 style={{ color: "red" }}>{confirmReg}</h4> 
             : null}
-            <div className="form">
+            <div className="form mt-3">
             <form className="form-control" onSubmit={register}>
                 <div>
                     <label className="form-label">Username</label>
+                    <br/>
                     {errors.username ? (
                         <span className="error-text">
                             {errors.username.message}
@@ -80,6 +81,7 @@ const Register = (props)=>{
                 </div>
                 <div>
                     <label className="form-label">Email</label>
+                    <br/>
                     {errors.email ? (
                         <span className="error-text">{errors.email.message}</span>
                     ) : null}
@@ -92,6 +94,7 @@ const Register = (props)=>{
                 </div>
                 <div>
                     <label className="form-label">Password</label>
+                    <br/>
                     {errors.password ? (
                         <span className="error-text">
                             {errors.password.message}
@@ -105,7 +108,8 @@ const Register = (props)=>{
                     />
                 </div>
                 <div>
-                    <label>Confirm Password</label>
+                    <label className="form-label">Confirm Password</label>
+                    <br/>
                     {errors.confirmPassword ? (
                         <span className="error-text">
                             {errors.confirmPassword.message}
