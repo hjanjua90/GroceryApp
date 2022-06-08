@@ -11,7 +11,7 @@ const LogReg = (props) => {
             <header style={{borderBottom: "5px double yellow",
                     color:"#FF4500",fontFamily:"monospace"}}>
                 <h1 style={{fontSize: "100px"}}>
-                Get This NOT that
+                Get This NOT That
                 </h1>
             </header>
             <div style={{display:"flex", margin:"40px", fontFamily:"monospace"}}>

@@ -75,17 +75,17 @@ const DisplayAll = (props) => {
 
 
     return (
-        <div style={{backgroundColor: "#FFFACD"}}>
+        <div style={{backgroundColor: "	#87CEFA"}}>
             <header>
                 <h1 style={{
                     fontSize: "50px", borderBottom: "5px double lightgray",
-                     color:"#FF4500",fontFamily:"monospace"
+                    color:"#FF4500",fontFamily:"monospace"
                 }}>Get This NOT That
                 </h1>
-                <div style={{display:"flex", justifyContent:"space-between"}}>
-                    <Link to={"/new"}>Add New Grocery Item</Link>
+                <div style={{display:"flex", justifyContent:"space-between", padding:"20px"}}>
+                    <Link to={"/new"} style={{paddingLeft:"60px"}}>Add New Grocery Item</Link>
                 {/* <Link to={`/user/profile/${user.username}`}>{user.username} Profile</Link> */}
-                    <button className="btn btn-primary m-1" onClick={logout}>Logout</button>
+                    <button className="btn btn-primary m-1"style={{margin:"60px"}} onClick={logout}>Logout</button>
                 </div>
             </header>
             <Table style={{margin:"auto", border:"1px solid black"}}>
@@ -124,7 +124,7 @@ const DisplayAll = (props) => {
                                     </td>
 
                                     <td>
-                                    <Link to={`/grocery/edit/${grocery._id}`}><Button variant="warning" size="sm">Edit </Button></Link>
+                                    <Link to={`/grocery/edit/${grocery._id}`} style={{margin:"2px", padding:"5px" }}><Button variant="warning" size="sm">Edit </Button></Link>
                                     <DeleteButton deleteHandler={()=>deleteGrocery(grocery._id)} />
                                     </td>
                                 </tr>

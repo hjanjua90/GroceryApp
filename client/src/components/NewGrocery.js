@@ -57,13 +57,13 @@ const NewGrocery = (props) => {
 
 
     return (
-        <div>
-            <header style={{ borderBottom: "5px double lightgray", padding: "10px", margin: "10px" }}>
-                <h1 style={{ fontSize: "30px", marginLeft: "450px", marginRight: "450px", color: "#FF8C00", fontFamily:"monospace", backgroundColor: "#FFDEAD"}}>Add an Item</h1>
+        <div style={{backgroundColor: "	#87CEFA"}}>
+            <header>
+                <h1 style={{ fontSize: "30px", marginLeft: "50px", marginRight: "50px", color: "#FF8C00", fontFamily:"monospace", backgroundColor: "#FFDEAD"}}>Add an Item</h1>
                 <Link to={"/home"}>Return Home</Link>
             </header>
             <div className="form" style={{marginLeft:"100px", marginRight:"100px", marginTop:"20px"}}>
-                <form className= "form-control" onSubmit={submitHandler}>
+                <form className= "form-control" style={{backgroundColor: "#87CEFA"}} onSubmit={submitHandler}>
                     <div>
                         <label className="form-label">Name</label>
                         <input className = "form-control" value={name} onChange={(e) => setName(e.target.value)} type="text"  />
@@ -104,7 +104,7 @@ const NewGrocery = (props) => {
                     </div>
     
                     <div>
-                        <label className="form-label">boxArt</label>
+                        <label className="form-label">Box Art</label>
                         <input className = "form-control" value={boxArt} onChange={(e) => setBoxArt(e.target.value)} type="text" />
                         <br />
                         {
