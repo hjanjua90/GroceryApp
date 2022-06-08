@@ -55,13 +55,13 @@ const EditGrocery = (props)=>{
     }
 
     return (
-        <div>
+        <div style={{backgroundColor: "	#87CEFA"}}>
             <header style={{ borderBottom: "5px double lightgray", padding: "10px", margin: "10px" }}>
                 <h1 style={{ fontSize: "50px", fontFamily:"monospace" ,color:"#FF4500" }}>Update Item!</h1>
                 <Link to={"/home"}>Return Home</Link>
             </header>
             <div className="form">
-            <form onSubmit={submitHandler} className= "form-control">
+            <form style={{backgroundColor: "#87CEFA"}} onSubmit={submitHandler} className= "form-control">
                 <div>
                     <label className="form-label">Name</label>
                     <input className = "form-control" value={name} onChange={(e) => setName(e.target.value)} type="text" />
