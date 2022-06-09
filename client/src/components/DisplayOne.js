@@ -35,11 +35,10 @@ const DisplayOne = (props) =>{
     }
 
     return (
-        <div className="card">
+        <div className="card" style={{backgroundColor: "#87CEFA"}}>
             <div class="card-header">
             <Link to={"/home"}>Home</Link>
             </div>
-            <div class="card">
             <div class="card-body">
             <h5 class="card-title">{grocery.name}</h5>
             <p class="card-text">{grocery.type}</p>
@@ -47,7 +46,6 @@ const DisplayOne = (props) =>{
             <img src={grocery.boxArt} style={{ width: "150px", height: "200px" }}/>
             <br />
             <DeleteButton deleteHandler={deleteOneGrocery}/>
-            </div>
             </div>
         </div>
 
